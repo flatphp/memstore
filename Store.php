@@ -7,7 +7,7 @@
  *     'memcache' => []
  * ]
  */
-class Storage
+class Store
 {
     protected static $_config = [];
 
