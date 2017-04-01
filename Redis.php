@@ -2,7 +2,7 @@
 
 /**
  * config e.g.
- * array('host' => '127.0.0.1', 'port' => '6379', 'auth' => 'xxx')
+ * array('host' => '127.0.0.1', 'port' => '6379', 'auth' => 'xxx', 'pconnect' => false)
  * array(
  *     'cluster' => 'mycluster'
  * )
@@ -38,7 +38,11 @@ class Redis
             $this->_redis = new \Redis;
             $host = $config['host'];
             $port = empty($config['port']) ? self::DEFAULT_PORT : $config['port'];
-            $this->_redis->connect($host, $port);
+            if (isset($config['pconnect']) && $config['pconnect'] == true) {
+                $this->_redis->pconnect($host, $port);
+            } else {
+                $this->_redis->connect($host, $port);
+            }
             if (!empty($config['auth'])) {
                 $this->_redis->auth($config['auth']);
             }

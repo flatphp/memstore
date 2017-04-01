@@ -11,7 +11,7 @@ class Store
 {
     protected static $_config = [];
 
-    public static function config(array $config)
+    public static function init(array $config)
     {
         self::$_config = $config;
     }
