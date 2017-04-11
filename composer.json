@@ -1,7 +1,7 @@
 {
     "name": "flatphp/memstore",
     "description": "memory storage component",
-    "keywords": ["memstore","memcache","redis"],
+    "keywords": ["memstore","memcache","memcached","redis","redis cluster","predis"],
     "license": "MIT",
     "authors": [
         {
@@ -16,6 +16,5 @@
         "psr-4": {
             "Flatphp\\Memstore\\": ""
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
