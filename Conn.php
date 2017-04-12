@@ -18,6 +18,16 @@ class Conn
         self::$_config = $config;
     }
 
+
+    public static function connect($type, $config)
+    {
+        $type = strtolower($type);
+        $type = str_replace('_', '', ucwords($type, '_'));
+        $conn = __NAMESPACE__ .'\\' .$type .'Conn';
+        return new $conn($config);
+    }
+
+
     protected static function _conn($type, $name)
     {
         if (empty(self::$_config[$type])) {
