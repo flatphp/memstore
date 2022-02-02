@@ -37,7 +37,6 @@ class MemcacheConn
             $params = array(
                 'host' => '127.0.0.1',
                 'tcp_port' => 11211,
-                'udp_port' => 0,
                 'persistent' => true,
                 'weight' => 1
             );
